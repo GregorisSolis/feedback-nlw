@@ -33,11 +33,6 @@ export function FeedbackContentStep({
 			type: feedbackType, 
 			comment, 
 			screenshot
-		}).then(resp => {
-			console.log(resp.data)
-		})
-		.catch(err => {
-			console.log(err)
 		})
 
 		setIsSendingFeedback(false)

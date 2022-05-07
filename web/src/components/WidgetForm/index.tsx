@@ -21,14 +21,14 @@ export const feedbackTypes = {
 		title: 'Idea',
 		image: {
 			source: ideaImg,
-			//alt: 'Imagen de uma lampada'
+			alt: 'Imagen de uma lampada'
 		}
 	},
 	OTHER: {
 		title: 'Outro',
 		image: {
 			source: thoughtImg,
-			//alt: 'Imagen de um balão de pensamento'
+			alt: 'Imagen de um balão de pensamento'
 		}
 	},
 }
