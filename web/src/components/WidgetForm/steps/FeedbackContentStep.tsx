@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { FormEvent, useState } from 'react'
 import { FeedbackType, feedbackTypes } from ".."
 import { CloseButton } from '../../CloseButton'
 import { Loading } from '../../Loading'
@@ -7,7 +7,7 @@ import { ScreenshotButton } from '../ScreenshotButton'
 import { api } from '../../../lib/api'
 
 interface FeedbackContentStepProps {
-	feedback: FeedbackType;
+	feedbackType: FeedbackType;
 	onFeedbackRestartRequested: () => void
 	onFeedbackSent: () => void
 }
@@ -16,7 +16,7 @@ export function FeedbackContentStep({
 	feedbackType,
 	onFeedbackRestartRequested,
 	onFeedbackSent
-	}: FeedbackTypeStepProps){
+	}: FeedbackContentStepProps){
 
 	const [screenshot, setScreenshot] = useState<string | null>(null)
 	const [comment, setComment] = useState('')
@@ -24,8 +24,8 @@ export function FeedbackContentStep({
 
 	const feedbackTypeInfo = feedbackTypes[feedbackType]
 
-	async function handleSubmitFeedback(e: FormEvent){
-		e.preventDefault()
+	async function handleSubmitFeedback(event: FormEvent){
+		event.preventDefault()
 
 		setIsSendingFeedback(true)
 
